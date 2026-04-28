@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ABCJ – Associação Beneficente e Cultural de Jundiaí. Desenvolvendo atividades educativas, sociais e culturais voltadas para a população de baixa renda." />
+  <title>ABCJ – Associação Beneficente e Cultural de Jundiaí</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#home" class="logo" id="logo-link">
+        <img src="images/logo_abcj.jpg" alt="Logo ABCJ" class="logo__img" />
+      </a>
+
+      <nav class="nav" id="main-nav" aria-label="Menu principal">
+        <ul class="nav__list">
+          <li><a href="a-abcj.html" class="nav__link">A ABCJ</a></li>
+          <li><a href="equipe.html" class="nav__link">Equipe</a></li>
+          <li class="nav__dropdown">
+            <a href="index.html#projetos" class="nav__link">Projetos <span class="nav__arrow">▾</span></a>
+            <ul class="nav__sub">
+              <li><a href="projeto-preparando-futuro.html">Preparando o Futuro</a></li>
+              <li><a href="projeto-campanha-inverno.html">Campanha Inverno</a></li>
+              <li><a href="projeto-cesta-basica.html">Cesta Básica</a></li>
+              <li><a href="projeto-natal-solidario.html">Natal Solidário</a></li>
+            </ul>
+          </li>
+          <li><a href="formandos.html" class="nav__link">Formandos / Graduados</a></li>
+          <li class="nav__dropdown">
+            <a href="blog.html" class="nav__link">Blog <span class="nav__arrow">▾</span></a>
+            <ul class="nav__sub">
+              <li><a href="noticias.html">Notícias</a></li>
+              <li><a href="processo-seletivo.html">Processo Seletivo</a></li>
+              <li><a href="eventos.html">Eventos</a></li>
+              <li><a href="agradecimentos.html">Agradecimentos</a></li>
+            </ul>
+          </li>
+          <li><a href="index.html#contato" class="nav__link">Contato</a></li>
+        </ul>
+      </nav>
+
+
+
+      <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <ul class="mobile-menu__list">
+        <li><a href="a-abcj.html" class="mobile-menu__link">A ABCJ</a></li>
+        <li><a href="equipe.html" class="mobile-menu__link">Equipe</a></li>
+        <li><a href="index.html#projetos" class="mobile-menu__link">Projetos</a></li>
+        <li><a href="formandos.html" class="mobile-menu__link">Formandos / Graduados</a></li>
+        <li><a href="blog.html" class="mobile-menu__link">Blog</a></li>
+        <li><a href="index.html#contato" class="mobile-menu__link">Contato</a></li>
+
+      </ul>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ========== HERO ========== -->
+    <section class="hero" id="home" aria-label="Seção principal">
+      <div class="hero__bg" id="hero-bg"></div>
+      <div class="hero__overlay"></div>
+      <div class="hero__content">
+        <span class="hero__tag animate-fade-up">Transformando vidas desde 1998</span>
+        <h1 class="hero__title animate-fade-up delay-1">
+          Educação que <em>transforma</em><br />futuros que inspiram
+        </h1>
+        <p class="hero__subtitle animate-fade-up delay-2">
+          Apoiamos jovens de baixa renda com bolsas universitárias, projetos sociais e ações culturais em Jundiaí-SP.
+        </p>
+        <div class="hero__actions animate-fade-up delay-3">
+          <a href="#projetos" class="btn btn--primary btn--lg" id="hero-cta">Conheça o projeto</a>
+          <a href="#sobre" class="btn btn--outline btn--lg" id="hero-saiba">Saiba mais</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== NÚMEROS / IMPACTO ========== -->
+    <section class="stats" id="stats" aria-label="Números de impacto">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Nosso Impacto</span>
+          <h2 class="section-title">Números que fazem a diferença</h2>
+        </div>
+        <div class="stats__grid">
+          <div class="stat-card" data-target="1500">
+            <div class="stat-card__icon">🎓</div>
+            <span class="stat-card__number" id="counter-jovens">0</span>
+            <p class="stat-card__label">Jovens beneficiados</p>
+          </div>
+          <div class="stat-card" data-target="320">
+            <div class="stat-card__icon">📚</div>
+            <span class="stat-card__number" id="counter-bolsas">0</span>
+            <p class="stat-card__label">Jovens beneficiados no Preparando o Futuro</p>
+          </div>
+          <div class="stat-card" data-target="850">
+            <div class="stat-card__icon">❤️</div>
+            <span class="stat-card__number" id="counter-doacoes">0</span>
+            <p class="stat-card__label">Doações realizadas</p>
+          </div>
+          <div class="stat-card" data-target="20">
+            <div class="stat-card__icon">🤝</div>
+            <span class="stat-card__number" id="counter-parceiros">0</span>
+            <p class="stat-card__label">Anos de atuação</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PROJETOS ========== -->
+    <section class="projects" id="projetos" aria-label="Nossos projetos">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">O que fazemos</span>
+          <h2 class="section-title">Nossos Projetos</h2>
+          <p class="section-desc">Iniciativas que constroem pontes entre o presente e um futuro melhor.</p>
+        </div>
+        <div class="projects__grid">
+
+          <article class="project-card" id="card-futuro">
+            <div class="project-card__img-wrap">
+              <img src="images/preparandoofuturo.jpg" alt="Projeto Preparando o Futuro – jovens recebendo bolsas universitárias" class="project-card__img" loading="lazy" />
+              <span class="project-card__badge">Destaque</span>
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">Preparando o Futuro</h3>
+              <p class="project-card__desc">Oferecemos bolsas de estudo integrais a jovens de baixa renda para acesso ao ensino superior, acompanhamento pedagógico e suporte social.</p>
+              <a href="projeto-preparando-futuro.html" class="project-card__link">Saiba mais →</a>
+            </div>
+          </article>
+
+          <article class="project-card" id="card-inverno">
+            <div class="project-card__img-wrap">
+              <img src="images/inverno5.jpeg" alt="Campanha do Agasalho – distribuição de roupas de inverno" class="project-card__img" loading="lazy" />
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">Campanha Inverno</h3>
+              <p class="project-card__desc">Arrecadamos e distribuímos agasalhos, cobertores e roupas para famílias em situação de vulnerabilidade durante o período de frio.</p>
+              <a href="projeto-campanha-inverno.html" class="project-card__link">Saiba mais →</a>
+            </div>
+          </article>
+
+          <article class="project-card" id="card-cesta">
+            <div class="project-card__img-wrap">
+              <img src="images/cesta.jpg" alt="Cesta Básica – doação de alimentos" class="project-card__img" loading="lazy" />
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">Cesta Básica</h3>
+              <p class="project-card__desc">Distribuição mensal de cestas básicas para famílias carentes, garantindo segurança alimentar e dignidade às pessoas mais vulneráveis.</p>
+              <a href="projeto-cesta-basica.html" class="project-card__link">Saiba mais →</a>
+            </div>
+          </article>
+
+          <article class="project-card" id="card-natal">
+            <div class="project-card__img-wrap">
+              <img src="images/natalgrande.jpg" alt="Natal Solidário – distribuição de presentes para crianças" class="project-card__img" loading="lazy" />
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">Natal Solidário</h3>
+              <p class="project-card__desc">Realizamos a magia do Natal para crianças e famílias em situação de vulnerabilidade, com doação de brinquedos e celebração comunitária.</p>
+              <a href="projeto-natal-solidario.html" class="project-card__link">Saiba mais →</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SOBRE ========== -->
+    <section class="about" id="sobre" aria-label="Sobre a ABCJ">
+      <div class="container about__inner">
+        <div class="about__image-col">
+          <div class="about__img-wrap">
+            <img src="images/about_image.png" alt="Estudantes na sala de aula – ABCJ" class="about__img" loading="lazy"/>
+            <div class="about__img-badge">
+              <strong>+20</strong>
+              <span>anos de história</span>
+            </div>
+          </div>
+        </div>
+        <div class="about__content-col">
+          <span class="section-tag">Quem somos</span>
+          <h2 class="section-title">Associação Beneficente e Cultural de Jundiaí</h2>
+          <p class="about__lead">Somos uma organização sem fins lucrativos que acredita no poder da educação como ferramenta de transformação social.</p>
+          <p class="about__text">Atuamos na região de Jundiaí-SP desde 1998, desenvolvendo atividades educativas, sociais e culturais voltadas para a população de baixa renda, buscando auxiliar principalmente na formação do jovem.</p>
+
+          <div class="mvv">
+            <div class="mvv__item" id="mvv-missao">
+              <div class="mvv__icon">🎯</div>
+              <div>
+                <h3 class="mvv__title">Missão</h3>
+                <p class="mvv__text">Promover o desenvolvimento humano e social por meio da educação, cultura e solidariedade.</p>
+              </div>
+            </div>
+            <div class="mvv__item" id="mvv-visao">
+              <div class="mvv__icon">👁️</div>
+              <div>
+                <h3 class="mvv__title">Visão</h3>
+                <p class="mvv__text">Ser referência em transformação social, contribuindo para uma sociedade mais justa e igualitária.</p>
+              </div>
+            </div>
+            <div class="mvv__item" id="mvv-valores">
+              <div class="mvv__icon">💎</div>
+              <div>
+                <h3 class="mvv__title">Valores</h3>
+                <p class="mvv__text">Transparência, solidariedade, respeito à dignidade humana e compromisso com a comunidade.</p>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PARCEIROS ========== -->
+    <section class="partners" id="parceiros" aria-label="Nossos parceiros">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Quem nos apoia</span>
+          <h2 class="section-title">Parceiros &amp; Apoiadores</h2>
+        </div>
+      </div>
+      <div class="carousel-wrapper" aria-label="Carrossel de parceiros">
+        <div class="carousel-track" id="carousel-track">
+          <div class="partner-logo"><img src="images/oralestetica.jpeg" alt="Oral Estética"></div>
+          <div class="partner-logo"><img src="images/fama.jpeg" alt="Fama"></div>
+          <div class="partner-logo"><img src="images/sicred.jpg" alt="Sicredi"></div>
+          <div class="partner-logo"><img src="images/audicon.jpg" alt="Audicon"></div>
+          <div class="partner-logo"><img src="images/novarh.jpg" alt="Nova RH"></div>
+          <div class="partner-logo"><img src="images/efe.png" alt="Efe"></div>
+          <div class="partner-logo"><img src="images/cosmar.jpeg" alt="Cosmar"></div>
+          <div class="partner-logo"><img src="images/unianchieta.png" alt="UniAnchieta"></div>
+          
+          <!-- Duplicates for infinite scroll -->
+          <div class="partner-logo" aria-hidden="true"><img src="images/oralestetica.jpeg" alt=""></div>
+          <div class="partner-logo" aria-hidden="true"><img src="images/fama.jpeg" alt=""></div>
+          <div class="partner-logo" aria-hidden="true"><img src="images/sicred.jpg" alt=""></div>
+          <div class="partner-logo" aria-hidden="true"><img src="images/audicon.jpg" alt=""></div>
+          <div class="partner-logo" aria-hidden="true"><img src="images/novarh.jpg" alt=""></div>
+          <div class="partner-logo" aria-hidden="true"><img src="images/efe.png" alt=""></div>
+          <div class="partner-logo" aria-hidden="true"><img src="images/cosmar.jpeg" alt=""></div>
+          <div class="partner-logo" aria-hidden="true"><img src="images/unianchieta.png" alt=""></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CONTATO ========== -->
+    <section class="contact" id="contato" aria-label="Formulário de contato">
+      <div class="container contact__inner">
+        <div class="donation__video" style="width: 100%; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); align-self: center;">
+          <iframe width="100%" style="border: none; aspect-ratio: 16/9;" src="https://www.youtube.com/embed/oIAQZM43AwQ" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <div class="donation__picpay" style="display: flex; flex-direction: column; justify-content: center; align-items: center; background: var(--white); border-radius: var(--radius-lg); padding: 3rem; text-align: center; box-shadow: var(--shadow-lg);">
+          <h2 style="color: var(--orange-900); font-family: var(--font-display); font-size: 2rem; margin-bottom: 1rem;">Ajude a ABCJ</h2>
+          <p style="color: var(--gray-600); margin-bottom: 1.5rem; font-size: 1.1rem;">Faça sua doação pelo PicPay e nos ajude a transformar a vida de jovens através da educação e solidariedade!</p>
+          <img src="images/qrcode.jpeg" alt="QR Code PicPay" style="width: 250px; height: 250px; margin-bottom: 1.5rem; object-fit: contain;" />
+          <a href="https://picpay.me/abcj" target="_blank" class="btn btn--primary" style="width: 100%; max-width: 250px; font-size: 1.1rem; text-align: center; justify-content: center;">Faça uma doação</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer" id="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <div class="logo logo--light">
+          <img src="images/logo_abcj.jpg" alt="Logo ABCJ" class="logo__img" />
+        </div>
+        <p class="footer__tagline">Transformando vidas através da educação e da solidariedade em Jundiaí-SP.</p>
+        <div class="social-links footer__social">
+          <a href="https://www.facebook.com/AssociacaoBeneficenteECulturalDeJundiai/" class="social-link" aria-label="Facebook" target="_blank">f</a>
+          <a href="https://www.instagram.com/abcj_ong_" class="social-link" aria-label="Instagram" target="_blank">ig</a>
+        </div>
+      </div>
+
+      <div class="footer__col">
+        <h3 class="footer__heading">Links Rápidos</h3>
+        <ul class="footer__links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#sobre">Sobre a ABCJ</a></li>
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#parceiros">Parceiros</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h3 class="footer__heading">Projetos</h3>
+        <ul class="footer__links">
+          <li><a href="projeto-preparando-futuro.html">Preparando o Futuro</a></li>
+          <li><a href="projeto-campanha-inverno.html">Campanha Inverno</a></li>
+          <li><a href="projeto-cesta-basica.html">Cesta Básica</a></li>
+          <li><a href="projeto-natal-solidario.html">Natal Solidário</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h3 class="footer__heading">Contato</h3>
+        <ul class="footer__links footer__links--contact">
+          <li>📧 <a href="mailto:contato@abjc.com.br">contato@abjc.com.br</a></li>
+          <li>📧 <a href="mailto:abcjundiai@gmail.com">abcjundiai@gmail.com</a></li>
+          <li>📍 Rua Barão de Jundiaí, 161 Centro, Jundiaí – SP CEP 13201-010.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="container footer__bottom-inner">
+        <p>ABCJ – Associação Beneficente e Cultural de Jundiaí. Todos os direitos reservados.</p>
+        <p>Banco Sicredi – 748 | Agência: 0738 | Conta Corrente: 43182-5</p>
+        <p>CNPJ: 07.965.617/0001-90 | Chave PIX: 07965617/0001-90 | Entidade de Utilidade Pública</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

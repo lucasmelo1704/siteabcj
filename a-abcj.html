@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A ABCJ – Associação Beneficente e Cultural de Jundiaí. Conheça tudo sobre a ABCJ." />
+  <title>A ABCJ - Associação Beneficente e Cultural de Jundiaí</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header class="header" id="header" style="background: rgba(74,23,0,.92); backdrop-filter: blur(12px); box-shadow: 0 2px 20px rgba(0,0,0,.2);">
+    <div class="container header__inner">
+      <a href="index.html" class="logo" id="logo-link">
+        <img src="images/logo_abcj.jpg" alt="Logo ABCJ" class="logo__img" />
+      </a>
+
+      <nav class="nav" id="main-nav" aria-label="Menu principal">
+        <ul class="nav__list">
+          <li><a href="a-abcj.html" class="nav__link">A ABCJ</a></li>
+          <li><a href="equipe.html" class="nav__link">Equipe</a></li>
+          <li class="nav__dropdown">
+            <a href="index.html#projetos" class="nav__link">Projetos <span class="nav__arrow">▾</span></a>
+            <ul class="nav__sub">
+              <li><a href="projeto-preparando-futuro.html">Preparando o Futuro</a></li>
+              <li><a href="projeto-campanha-inverno.html">Campanha Inverno</a></li>
+              <li><a href="projeto-cesta-basica.html">Cesta Básica</a></li>
+              <li><a href="projeto-natal-solidario.html">Natal Solidário</a></li>
+            </ul>
+          </li>
+          <li><a href="formandos.html" class="nav__link">Formandos / Graduados</a></li>
+          <li class="nav__dropdown">
+            <a href="blog.html" class="nav__link">Blog <span class="nav__arrow">▾</span></a>
+            <ul class="nav__sub">
+              <li><a href="noticias.html">Notícias</a></li>
+              <li><a href="processo-seletivo.html">Processo Seletivo</a></li>
+              <li><a href="eventos.html">Eventos</a></li>
+              <li><a href="agradecimentos.html">Agradecimentos</a></li>
+            </ul>
+          </li>
+          <li><a href="index.html#contato" class="nav__link">Contato</a></li>
+        </ul>
+      </nav>
+
+
+
+      <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <ul class="mobile-menu__list">
+        <li><a href="a-abcj.html" class="mobile-menu__link">A ABCJ</a></li>
+        <li><a href="equipe.html" class="mobile-menu__link">Equipe</a></li>
+        <li><a href="index.html#projetos" class="mobile-menu__link">Projetos</a></li>
+        <li><a href="formandos.html" class="mobile-menu__link">Formandos / Graduados</a></li>
+        <li><a href="blog.html" class="mobile-menu__link">Blog</a></li>
+        <li><a href="index.html#contato" class="mobile-menu__link">Contato</a></li>
+
+      </ul>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ========== HERO PROJECT ========== -->
+    <section class="hero hero--project" aria-label="Seção A ABCJ">
+      <div class="hero__bg loaded" style="background: url('images/about_image.png') center/cover no-repeat;"></div>
+      <div class="hero__overlay"></div>
+      <div class="hero__content" style="padding-top: 4rem;">
+        <span class="hero__tag animate-fade-up">CONHEÇA TUDO SOBRE A ABCJ</span>
+        <h1 class="hero__title animate-fade-up delay-1">A <em>ABCJ</em></h1>
+      </div>
+    </section>
+
+    <!-- ========== DETAILS ========== -->
+    <section class="project-details">
+      <div class="container project-details__inner" style="grid-template-columns: 1fr; max-width: 800px; margin: 0 auto;">
+        <div class="project-details__content">
+          <h3>QUEM SOMOS</h3>
+          <p>Somos a Associação Beneficente e Cultural de Jundiaí. Atuamos na região de Jundiaí-SP, desenvolvendo atividades educativas, sociais e culturais voltadas à população de baixa renda, buscando auxiliar principalmente na formação do jovem.</p>
+          
+          <h3 style="margin-top: 2rem;">NOSSA MISSÃO</h3>
+          <p>Proporcionar às famílias, principalmente aos jovens, a oportunidade de se integrarem à sociedade e construírem um futuro com mais cultura e conhecimento para si e para sua comunidade.</p>
+          
+          <h3 style="margin-top: 2rem;">NOSSA VISÃO</h3>
+          <p>Nós acreditamos em sonhos! E sabemos que só através do esforço pessoal, da dedicação e da oportunidade é possível transformá-los em realidade. Quando se muda uma história individual, esse indivíduo passa a agir como agente multiplicador do bem, peça-chave para a formação de um mundo melhor.</p>
+          
+          <h3 style="margin-top: 2rem;">OBJETIVOS</h3>
+          <p>Prática desinteressada da filantropia e da beneficência, voltada para integração de cidadãos na sociedade, possibilitando-os de se autossustentarem, através do desenvolvimento profissional, científico, cultural, artístico e educacional; proteção ao meio-ambiente, utilizando-se, para isso, organização, coordenação, promoção de cursos de formação ou de qualificação profissional, além de campanhas de benemerência, sociais e culturais.</p>
+          
+          <h3 style="margin-top: 2rem;">HISTÓRICO</h3>
+          <p>Surgiu na década de 1960, formada por um grupo de amigos, e tinha enfoque nas ações assistencialistas e sociais. Nos anos 2000, ressurgiu com uma proposta revitalizada, mas mantendo os ideais que estruturaram sua criação. Foi legalmente fundada no dia 10 de março de 2006. O atendimento se ampliou, ganhando notoriedade no atendimento aos adolescentes de baixa renda, através do “Projeto Preparando o Futuro”. Passou a ofertar acompanhamento e investimento na formação profissional e pessoal do jovem.</p>
+          
+          <h3 style="margin-top: 2rem;">TRANSPARÊNCIA</h3>
+          <p>A ABCJ é uma entidade civil legalmente constituída, sem finalidade lucrativa, de caráter filantrópico, beneficente e cultural. É formada por um grupo de profissionais capacitados e motivados para desenvolver atividades sócios educativas, culturais e sociais junto à população. A entidade pratica um modelo de filantropia que só é possível porque tem como base uma rede de simpatizantes e parcerias com entidades destacadas na área educacional. É reconhecida como entidade de Utilidade Pública Municipal pela Lei n° 7264 de 08/04/2009.</p>
+
+          <h3 style="margin-top: 2rem;">A ABCJ e os Objetivos do Desenvolvimento Sustentável (ODS)</h3>
+          <p>A ABCJ (Associação Beneficente e Cultural de Jundiaí) realiza diversas ações sociais e tendo como principal projeto o Programa Preparando o Futuro. Dentro dessa frente de trabalho são atendidos sete dos 17 Objetivos do Desenvolvimento Sustentável (ODS), conforme estabelecido pela Organização das Nações Unidas (ONU) em 2015.</p>
+          <div class="ods-grid">
+            <img src="images/ODS1.png" alt="ODS 1" class="ods-img" />
+            <img src="images/ODS2.png" alt="ODS 2" class="ods-img" />
+            <img src="images/ODS4.png" alt="ODS 4" class="ods-img" />
+            <img src="images/ODS5.png" alt="ODS 5" class="ods-img" />
+            <img src="images/ODS08.png" alt="ODS 8" class="ods-img" />
+            <img src="images/ODS10.png" alt="ODS 10" class="ods-img" />
+            <img src="images/ODS16.png" alt="ODS 16" class="ods-img" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer" id="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <div class="logo logo--light">
+          <img src="images/logo_abcj.jpg" alt="Logo ABCJ" class="logo__img" />
+        </div>
+        <p class="footer__tagline">Transformando vidas através da educação e da solidariedade em Jundiaí-SP.</p>
+        <div class="social-links footer__social">
+          <a href="https://www.facebook.com/AssociacaoBeneficenteECulturalDeJundiai/" class="social-link" aria-label="Facebook" target="_blank">f</a>
+          <a href="https://www.instagram.com/abcj_ong_" class="social-link" aria-label="Instagram" target="_blank">ig</a>
+        </div>
+      </div>
+
+      <div class="footer__col">
+        <h3 class="footer__heading">Links Rápidos</h3>
+        <ul class="footer__links">
+          <li><a href="a-abcj.html">A ABCJ</a></li>
+          <li><a href="equipe.html">Equipe</a></li>
+          <li><a href="index.html#projetos">Projetos</a></li>
+          <li><a href="formandos.html">Formandos / Graduados</a></li>
+          <li><a href="index.html#contato">Contato</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h3 class="footer__heading">Projetos</h3>
+        <ul class="footer__links">
+          <li><a href="projeto-preparando-futuro.html">Preparando o Futuro</a></li>
+          <li><a href="projeto-campanha-inverno.html">Campanha Inverno</a></li>
+          <li><a href="projeto-cesta-basica.html">Cesta Básica</a></li>
+          <li><a href="projeto-natal-solidario.html">Natal Solidário</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h3 class="footer__heading">Contato</h3>
+        <ul class="footer__links footer__links--contact">
+          <li>📧 <a href="mailto:contato@abjc.com.br">contato@abjc.com.br</a></li>
+          <li>📧 <a href="mailto:abcjundiai@gmail.com">abcjundiai@gmail.com</a></li>
+          <li>📍 Rua Barão de Jundiaí, 161 Centro, Jundiaí – SP CEP 13201-010.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="container footer__bottom-inner">
+        <p>© 2024 ABCJ – Associação Beneficente e Cultural de Jundiaí. Todos os direitos reservados.</p>
+        <p>CNPJ: 00.000.000/0001-00 | Entidade de Utilidade Pública</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

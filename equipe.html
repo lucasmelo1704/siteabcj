@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Equipe ABCJ – Conheça os profissionais e voluntários que transformam vidas em Jundiaí." />
+  <title>Equipe - Associação Beneficente e Cultural de Jundiaí</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header class="header" id="header" style="background: rgba(74,23,0,.92); backdrop-filter: blur(12px); box-shadow: 0 2px 20px rgba(0,0,0,.2);">
+    <div class="container header__inner">
+      <a href="index.html" class="logo" id="logo-link">
+        <img src="images/logo_abcj.jpg" alt="Logo ABCJ" class="logo__img" />
+      </a>
+
+      <nav class="nav" id="main-nav" aria-label="Menu principal">
+        <ul class="nav__list">
+          <li><a href="a-abcj.html" class="nav__link">A ABCJ</a></li>
+          <li><a href="equipe.html" class="nav__link active">Equipe</a></li>
+          <li class="nav__dropdown">
+            <a href="index.html#projetos" class="nav__link">Projetos <span class="nav__arrow">▾</span></a>
+            <ul class="nav__sub">
+              <li><a href="projeto-preparando-futuro.html">Preparando o Futuro</a></li>
+              <li><a href="projeto-campanha-inverno.html">Campanha Inverno</a></li>
+              <li><a href="projeto-cesta-basica.html">Cesta Básica</a></li>
+              <li><a href="projeto-natal-solidario.html">Natal Solidário</a></li>
+            </ul>
+          </li>
+          <li><a href="formandos.html" class="nav__link">Formandos / Graduados</a></li>
+          <li class="nav__dropdown">
+            <a href="blog.html" class="nav__link">Blog <span class="nav__arrow">▾</span></a>
+            <ul class="nav__sub">
+              <li><a href="noticias.html">Notícias</a></li>
+              <li><a href="processo-seletivo.html">Processo Seletivo</a></li>
+              <li><a href="eventos.html">Eventos</a></li>
+              <li><a href="agradecimentos.html">Agradecimentos</a></li>
+            </ul>
+          </li>
+          <li><a href="index.html#contato" class="nav__link">Contato</a></li>
+        </ul>
+      </nav>
+
+      <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <ul class="mobile-menu__list">
+        <li><a href="a-abcj.html" class="mobile-menu__link">A ABCJ</a></li>
+        <li><a href="equipe.html" class="mobile-menu__link">Equipe</a></li>
+        <li><a href="index.html#projetos" class="mobile-menu__link">Projetos</a></li>
+        <li><a href="formandos.html" class="mobile-menu__link">Formandos / Graduados</a></li>
+        <li><a href="blog.html" class="mobile-menu__link">Blog</a></li>
+        <li><a href="index.html#contato" class="mobile-menu__link">Contato</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ========== HERO TEAM ========== -->
+    <section class="hero hero--project" aria-label="Nossa Equipe">
+      <div class="hero__bg loaded" id="hero-bg" style="background: url('images/hero_background.png') center/cover no-repeat; filter: brightness(0.6);"></div>
+      <div class="hero__overlay"></div>
+      <div class="hero__content" style="padding-top: 4rem;">
+        <span class="hero__tag animate-fade-up">QUEM FAZ ACONTECER</span>
+        <h1 class="hero__title animate-fade-up delay-1">Nossa <em>Equipe</em></h1>
+        <p class="hero__subtitle animate-fade-up delay-2">
+          Conheça os profissionais e voluntários dedicados à missão de transformar vidas através da educação.
+        </p>
+      </div>
+    </section>
+
+    <!-- ========== TEAM MEMBERS ========== -->
+    <section class="team-section" style="padding: 6rem 0;">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Fundadores e Liderança</span>
+          <h2 class="section-title">Liderança & Coordenação</h2>
+        </div>
+
+        <div class="team-grid">
+          
+          <!-- Member 1: Jairo e Regina -->
+          <article class="team-card reveal">
+            <div class="team-card__img-wrap">
+              <img src="images/Jairo.jpeg" alt="Jairo e Regina Mattos" class="team-card__img" loading="lazy" />
+            </div>
+            <div class="team-card__body">
+              <h3 class="team-card__name">Jairo e Regina Mattos</h3>
+              <span class="team-card__role">Fundadores</span>
+              <p class="team-card__bio">
+                O programa "Preparando o Futuro" era um sonho que se tornou realidade graças ao envolvimento deste casal idealista. Jairo, engenheiro, e Regina, psicóloga, dedicaram vários anos neste belo programa sócio educativo, proporcionando a jovens de baixa renda uma oportunidade de vida melhor através da educação.
+              </p>
+            </div>
+          </article>
+
+          <!-- Member 2: Agostinho Raponi -->
+          <article class="team-card reveal">
+            <div class="team-card__img-wrap">
+              <img src="images/Agostinho.jpeg" alt="Agostinho Raponi" class="team-card__img" loading="lazy" />
+            </div>
+            <div class="team-card__body">
+              <h3 class="team-card__name">Agostinho Raponi</h3>
+              <span class="team-card__role">Diretor Cultural</span>
+              <p class="team-card__bio">
+                Com formação técnica industrial e bacharelado em Matemática e Estatística, Agostinho dedicou 40 anos à indústria automobilística. Hoje, aposentado, dedica seu tempo à ABCJ e tem como desafio levar o projeto para outras regiões do Brasil, dando novas oportunidades a jovens de baixa renda.
+              </p>
+            </div>
+          </article>
+
+          <!-- Member 3: Adilson Luiz Zanotello -->
+          <article class="team-card reveal">
+            <div class="team-card__img-wrap">
+              <img src="images/Adilson.jpg" alt="Adilson Luiz Zanotello" class="team-card__img" loading="lazy" />
+            </div>
+            <div class="team-card__body">
+              <h3 class="team-card__name">Adilson Luiz Zanotello</h3>
+              <span class="team-card__role">Coordenador</span>
+              <p class="team-card__bio">
+                Economista e pós-graduado em Gestão de Produção, Adilson atuou 37 anos na indústria cerâmica. Coordenador do "Preparando o Futuro" desde 2019, sente-se grato por ajudar alunos a transformarem suas vidas acadêmicas, pessoais e profissionais.
+              </p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== BOARD SECTION ========== -->
+    <section class="board-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Governança</span>
+          <h2 class="section-title">Diretoria e Conselhos</h2>
+        </div>
+
+        <div class="board-grid">
+          
+          <!-- Diretoria Executiva -->
+          <div class="board-col reveal">
+            <h3>Diretoria Executiva</h3>
+            <ul class="board-list">
+              <li><strong>Cilso Aparecido Santiago</strong> <span>Presidente</span></li>
+              <li><strong>Ariovaldo José Zanotello</strong> <span>1º Secretário</span></li>
+              <li><strong>Ocimar Fernandes</strong> <span>2º Secretário</span></li>
+              <li><strong>Waldinei Correia dos Santos</strong> <span>1º Tesoureiro</span></li>
+              <li><strong>João José Braz da Gama</strong> <span>2º Tesoureiro</span></li>
+              <li><strong>Noeidimar José Mozelli</strong> <span>Diretor Social</span></li>
+              <li><strong>Agostinho Hugo Raponi</strong> <span>Diretor Cultural</span></li>
+              <li><strong>Paulo Danilo Tromboni</strong> <span>Diretor Jurídico</span></li>
+            </ul>
+          </div>
+
+          <!-- Conselho Fiscal -->
+          <div class="board-col reveal">
+            <h3>Conselho Fiscal</h3>
+            <ul class="board-list">
+              <li><strong>Jairo Arlindo Mattos</strong> <span>Presidente</span></li>
+              <li><strong>Reginaldo José Palmerin (in memorian)</strong> <span>1º Secretário</span></li>
+              <li><strong>Paulo Cesar de Sant’ Anna</strong> <span>2º Secretário</span></li>
+              <li><strong>Fernando Pietro Mango</strong> <span>Conselheiro</span></li>
+              <li><strong>Rodrigo Bittencourt</strong> <span>Conselheiro</span></li>
+            </ul>
+          </div>
+
+          <!-- Conselho Deliberativo -->
+          <div class="board-col reveal">
+            <h3>Conselho Deliberativo</h3>
+            <ul class="board-list">
+              <li><strong>Carlos Roberto de Alencar</strong> <span>Presidente</span></li>
+              <li><strong>José Carvalho O. de Oliveira Tunisi</strong> <span>1º Vice-Presidente</span></li>
+              <li><strong>Mário José Luiz Silva de Divitiis</strong> <span>2º Vice-Presidente</span></li>
+              <li><strong>Álvaro Tadeu Duran</strong> <span>1º Secretário</span></li>
+              <li><strong>Teodolindo Alves Ribeiro</strong> <span>2º Secretário</span></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer" id="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <div class="logo logo--light">
+          <img src="images/logo_abcj.jpg" alt="Logo ABCJ" class="logo__img" />
+        </div>
+        <p class="footer__tagline">Transformando vidas através da educação e da solidariedade em Jundiaí-SP.</p>
+        <div class="social-links footer__social">
+          <a href="https://www.facebook.com/AssociacaoBeneficenteECulturalDeJundiai/" class="social-link" aria-label="Facebook" target="_blank">f</a>
+          <a href="https://www.instagram.com/abcj_ong_" class="social-link" aria-label="Instagram" target="_blank">ig</a>
+        </div>
+      </div>
+
+      <div class="footer__col">
+        <h3 class="footer__heading">Links Rápidos</h3>
+        <ul class="footer__links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="a-abcj.html">A ABCJ</a></li>
+          <li><a href="equipe.html">Equipe</a></li>
+          <li><a href="index.html#projetos">Projetos</a></li>
+          <li><a href="index.html#contato">Contato</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h3 class="footer__heading">Projetos</h3>
+        <ul class="footer__links">
+          <li><a href="projeto-preparando-futuro.html">Preparando o Futuro</a></li>
+          <li><a href="projeto-campanha-inverno.html">Campanha Inverno</a></li>
+          <li><a href="projeto-cesta-basica.html">Cesta Básica</a></li>
+          <li><a href="projeto-natal-solidario.html">Natal Solidário</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h3 class="footer__heading">Contato</h3>
+        <ul class="footer__links footer__links--contact">
+          <li>📧 <a href="mailto:contato@abjc.com.br">contato@abjc.com.br</a></li>
+          <li>📧 <a href="mailto:abcjundiai@gmail.com">abcjundiai@gmail.com</a></li>
+          <li>📍 Rua Barão de Jundiaí, 161 Centro, Jundiaí – SP CEP 13201-010.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="container footer__bottom-inner">
+        <p>© 2024 ABCJ – Associação Beneficente e Cultural de Jundiaí. Todos os direitos reservados.</p>
+        <p>CNPJ: 07.965.617/0001-90 | Entidade de Utilidade Pública</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

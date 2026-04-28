@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Natal Solidário ABCJ - Transformando o Natal de milhares de crianças em Jundiaí e região desde 1999." />
+  <title>Natal Solidário - ABCJ</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header class="header" id="header" style="background: rgba(74,23,0,.92); backdrop-filter: blur(12px); box-shadow: 0 2px 20px rgba(0,0,0,.2);">
+    <div class="container header__inner">
+      <a href="index.html" class="logo" id="logo-link">
+        <img src="images/logo_abcj.jpg" alt="Logo ABCJ" class="logo__img" />
+      </a>
+
+      <nav class="nav" id="main-nav" aria-label="Menu principal">
+        <ul class="nav__list">
+          <li><a href="a-abcj.html" class="nav__link">A ABCJ</a></li>
+          <li><a href="equipe.html" class="nav__link">Equipe</a></li>
+          <li class="nav__dropdown">
+            <a href="index.html#projetos" class="nav__link">Projetos <span class="nav__arrow">▾</span></a>
+            <ul class="nav__sub">
+              <li><a href="projeto-preparando-futuro.html">Preparando o Futuro</a></li>
+              <li><a href="projeto-campanha-inverno.html">Campanha Inverno</a></li>
+              <li><a href="projeto-cesta-basica.html">Cesta Básica</a></li>
+              <li><a href="projeto-natal-solidario.html">Natal Solidário</a></li>
+            </ul>
+          </li>
+          <li><a href="formandos.html" class="nav__link">Formandos / Graduados</a></li>
+          <li class="nav__dropdown">
+            <a href="blog.html" class="nav__link">Blog <span class="nav__arrow">▾</span></a>
+            <ul class="nav__sub">
+              <li><a href="noticias.html">Notícias</a></li>
+              <li><a href="processo-seletivo.html">Processo Seletivo</a></li>
+              <li><a href="eventos.html">Eventos</a></li>
+              <li><a href="agradecimentos.html">Agradecimentos</a></li>
+            </ul>
+          </li>
+          <li><a href="index.html#contato" class="nav__link">Contato</a></li>
+        </ul>
+      </nav>
+
+      <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <ul class="mobile-menu__list">
+        <li><a href="a-abcj.html" class="mobile-menu__link">A ABCJ</a></li>
+        <li><a href="equipe.html" class="mobile-menu__link">Equipe</a></li>
+        <li><a href="index.html#projetos" class="mobile-menu__link">Projetos</a></li>
+        <li><a href="formandos.html" class="mobile-menu__link">Formandos / Graduados</a></li>
+        <li><a href="blog.html" class="mobile-menu__link">Blog</a></li>
+        <li><a href="index.html#contato" class="mobile-menu__link">Contato</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ========== HERO PROJECT ========== -->
+    <section class="hero hero--project" aria-label="Seção do projeto">
+      <div class="hero__bg loaded" id="hero-bg" style="background: url('images/natalgrande.jpg') center/cover no-repeat; filter: brightness(0.65);"></div>
+      <div class="hero__overlay"></div>
+      <div class="hero__content" style="padding-top: 4rem;">
+        <span class="hero__tag animate-fade-up">PROJETOS ABCJ</span>
+        <h1 class="hero__title animate-fade-up delay-1">Natal <em>Solidário</em></h1>
+        <p class="hero__subtitle animate-fade-up delay-2">O primeiro grande projeto da ABCJ, levando alegria a milhares de crianças.</p>
+      </div>
+    </section>
+
+    <!-- ========== INTRODUCTION ========== -->
+    <section class="project-details">
+      <div class="container project-details__inner" style="grid-template-columns: 1fr; max-width: 900px; margin: 0 auto; text-align: center;">
+        <div class="project-details__content">
+          <h3>CONHEÇA NOSSA HISTÓRIA</h3>
+          <p>Promovido desde 1999, o <strong>Natal Solidário</strong> foi o primeiro grande projeto desenvolvido pela ABCJ e é realizado até hoje com resultados meritórios.</p>
+          <p>Nosso objetivo é transformar o Natal de inúmeras famílias de baixa renda, trazendo dignidade, alegria e esperança através de ações coordenadas de solidariedade.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== DETAILS SECTION (Two Columns) ========== -->
+    <section class="project-details" style="background: var(--gray-50); padding: 5rem 0;">
+      <div class="container project-details__inner">
+        <div class="reveal">
+          <img src="images/natalgrande.jpg" alt="Entrega de presentes Natal" class="project-details__img" style="aspect-ratio: 4/3; object-fit: cover;" />
+        </div>
+        <div class="project-details__content reveal">
+          <h3>21 Anos de Solidariedade</h3>
+          <p>Ao longo de mais de duas décadas, o Natal Solidário alcançou números impressionantes que refletem a generosidade de nossos parceiros e voluntários:</p>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem; margin-top: 1.5rem;">
+            <li style="display: flex; gap: 1rem; align-items: flex-start;">
+              <span style="color: var(--orange-500); font-weight: bold;">🎁</span>
+              <span>Mais de 9.000 presentes distribuídos às crianças assistidas.</span>
+            </li>
+            <li style="display: flex; gap: 1rem; align-items: flex-start;">
+              <span style="color: var(--orange-500); font-weight: bold;">🧺</span>
+              <span>Cerca de 5.600 cestas básicas entregues para as famílias.</span>
+            </li>
+            <li style="display: flex; gap: 1rem; align-items: flex-start;">
+              <span style="color: var(--orange-500); font-weight: bold;">🏢</span>
+              <span>Somente em 2018, beneficiou 20 entidades assistenciais com trabalhos sociais reconhecidos.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== GALLERY SECTION ========== -->
+    <section class="project-details" style="padding: 5rem 0;">
+      <div class="container">
+        <div class="section-header">
+          <h3 style="color: var(--orange-900); font-family: var(--font-display); font-size: 2rem;">Galeria de Momentos</h3>
+          <p>Confira alguns registros emocionantes de nossas edições do Natal Solidário.</p>
+        </div>
+        
+        <div class="project-gallery">
+          <!-- Gallery Items natal to natal65 -->
+          <div class="gallery-item reveal"><img src="images/natal.jpg" alt="Natal 1" loading="lazy"></div>
+          <div class="gallery-item reveal"><img src="images/natal2.jpg" alt="Natal 2" loading="lazy"></div>
+          <div class="gallery-item reveal"><img src="images/natal3.jpg" alt="Natal 3" loading="lazy"></div>
+          <div class="gallery-item reveal"><img src="images/natal4.jpg" alt="Natal 4" loading="lazy"></div>
+          <div class="gallery-item reveal"><img src="images/natal5.jpg" alt="Natal 5" loading="lazy"></div>
+          <div class="gallery-item reveal"><img src="images/natal6.jpg" alt="Natal 6" loading="lazy"></div>
+          <div class="gallery-item reveal"><img src="images/natal7.jpg" alt="Natal 7" loading="lazy"></div>
+          <div class="gallery-item reveal"><img src="images/natal8.jpg" alt="Natal 8" loading="lazy"></div>
+          <div class="gallery-item reveal"><img src="images/natal9.jpg" alt="Natal 9" loading="lazy"></div>
+          <div class="gallery-item reveal"><img src="images/natal10.jpg" alt="Natal 10" loading="lazy"></div>
+          <div class="gallery-item reveal"><img src="images/natal11.jpg" alt="Natal 11" loading="lazy"></div>
+          <div class="gallery-item reveal"><img src="images/natal12.jpg" alt="Natal 12" loading="lazy"></div>
+          <div class="gallery-item reveal hidden"><img src="images/natal13.jpg" alt="Natal 13" loading="lazy"></div>
+          <div class="gallery-item reveal hidden"><img src="images/natal14.jpg" alt="Natal 14" loading="lazy"></div>
+          <div class="gallery-item reveal hidden"><img src="images/natal15.jpg" alt="Natal 15" loading="lazy"></div>
+          <div class="gallery-item reveal hidden"><img src="images/natal16.jpg" alt="Natal 16" loading="lazy"></div>
+          <div class="gallery-item reveal hidden"><img src="images/natal17.jpg" alt="Natal 17" loading="lazy"></div>
+          <div class="gallery-item reveal hidden"><img src="images/natal18.jpg" alt="Natal 18" loading="lazy"></div>
+          <div class="gallery-item reveal hidden"><img src="images/natal19.jpg" alt="Natal 19" loading="lazy"></div>
+          <div class="gallery-item reveal hidden"><img src="images/natal20.jpg" alt="Natal 20" loading="lazy"></div>
+          <div class="gallery-item reveal hidden"><img src="images/natal21.jpg" alt="Natal 21" loading="lazy"></div>
+          <div class="gallery-item reveal hidden"><img src="images/natal22.jpg" alt="Natal 22" loading="lazy"></div>
+          <div class="gallery-item reveal hidden"><img src="images/natal23.jpg" alt="Natal 23" loading="lazy"></div>
+          <div class="gallery-item reveal hidden"><img src="images/natal24.jpg" alt="Natal 24" loading="lazy"></div>
+          <div class="gallery-item reveal hidden"><img src="images/natal25.jpg" alt="Natal 25" loading="lazy"></div>
+          <div class="gallery-item reveal hidden"><img src="images/natal26.jpg" alt="Natal 26" loading="lazy"></div>
+          <div class="gallery-item reveal hidden"><img src="images/natal27.jpg" alt="Natal 27" loading="lazy"></div>
+          <div class="gallery-item reveal hidden"><img src="images/natal28.jpg" alt="Natal 28" loading="lazy"></div>
+          <div class="gallery-item reveal hidden"><img src="images/natal29.jpg" alt="Natal 29" loading="lazy"></div>
+          <div class="gallery-item reveal hidden"><img src="images/natal30.jpg" alt="Natal 30" loading="lazy"></div>
+          <div class="gallery-item reveal hidden"><img src="images/natal31.jpg" alt="Natal 31" loading="lazy"></div>
+          <div class="gallery-item reveal hidden"><img src="images/natal32.jpg" alt="Natal 32" loading="lazy"></div>
+          <div class="gallery-item reveal hidden"><img src="images/natal33.jpg" alt="Natal 33" loading="lazy"></div>
+          <div class="gallery-item reveal hidden"><img src="images/natal34.jpg" alt="Natal 34" loading="lazy"></div>
+          <div class="gallery-item reveal hidden"><img src="images/natal35.jpg" alt="Natal 35" loading="lazy"></div>
+          <div class="gallery-item reveal hidden"><img src="images/natal36.jpg" alt="Natal 36" loading="lazy"></div>
+          <div class="gallery-item reveal hidden"><img src="images/natal37.jpg" alt="Natal 37" loading="lazy"></div>
+          <div class="gallery-item reveal hidden"><img src="images/natal38.jpg" alt="Natal 38" loading="lazy"></div>
+          <div class="gallery-item reveal hidden"><img src="images/natal39.jpg" alt="Natal 39" loading="lazy"></div>
+          <div class="gallery-item reveal hidden"><img src="images/natal40.jpg" alt="Natal 40" loading="lazy"></div>
+          <div class="gallery-item reveal hidden"><img src="images/natal41.jpg" alt="Natal 41" loading="lazy"></div>
+          <div class="gallery-item reveal hidden"><img src="images/natal42.jpg" alt="Natal 42" loading="lazy"></div>
+          <div class="gallery-item reveal hidden"><img src="images/natal43.jpg" alt="Natal 43" loading="lazy"></div>
+          <div class="gallery-item reveal hidden"><img src="images/natal44.jpg" alt="Natal 44" loading="lazy"></div>
+          <div class="gallery-item reveal hidden"><img src="images/natal45.jpg" alt="Natal 45" loading="lazy"></div>
+          <div class="gallery-item reveal hidden"><img src="images/natal46.jpg" alt="Natal 46" loading="lazy"></div>
+          <div class="gallery-item reveal hidden"><img src="images/natal47.jpg" alt="Natal 47" loading="lazy"></div>
+          <div class="gallery-item reveal hidden"><img src="images/natal48.jpg" alt="Natal 48" loading="lazy"></div>
+          <div class="gallery-item reveal hidden"><img src="images/natal49.jpg" alt="Natal 49" loading="lazy"></div>
+          <div class="gallery-item reveal hidden"><img src="images/natal50.jpg" alt="Natal 50" loading="lazy"></div>
+          <div class="gallery-item reveal hidden"><img src="images/natal51.jpg" alt="Natal 51" loading="lazy"></div>
+          <div class="gallery-item reveal hidden"><img src="images/natal52.jpg" alt="Natal 52" loading="lazy"></div>
+          <div class="gallery-item reveal hidden"><img src="images/natal53.jpg" alt="Natal 53" loading="lazy"></div>
+          <div class="gallery-item reveal hidden"><img src="images/natal54.jpg" alt="Natal 54" loading="lazy"></div>
+          <div class="gallery-item reveal hidden"><img src="images/natal55.jpg" alt="Natal 55" loading="lazy"></div>
+          <div class="gallery-item reveal hidden"><img src="images/natal56.jpg" alt="Natal 56" loading="lazy"></div>
+          <div class="gallery-item reveal hidden"><img src="images/natal57.jpg" alt="Natal 57" loading="lazy"></div>
+          <div class="gallery-item reveal hidden"><img src="images/natal58.jpg" alt="Natal 58" loading="lazy"></div>
+          <div class="gallery-item reveal hidden"><img src="images/natal59.jpg" alt="Natal 59" loading="lazy"></div>
+          <div class="gallery-item reveal hidden"><img src="images/natal60.jpg" alt="Natal 60" loading="lazy"></div>
+          <div class="gallery-item reveal hidden"><img src="images/natal61.jpg" alt="Natal 61" loading="lazy"></div>
+          <div class="gallery-item reveal hidden"><img src="images/natal62.jpg" alt="Natal 62" loading="lazy"></div>
+          <div class="gallery-item reveal hidden"><img src="images/natal63.jpg" alt="Natal 63" loading="lazy"></div>
+          <div class="gallery-item reveal hidden"><img src="images/natal64.jpg" alt="Natal 64" loading="lazy"></div>
+          <div class="gallery-item reveal hidden"><img src="images/natal65.jpg" alt="Natal 65" loading="lazy"></div>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+          <button id="load-more-btn" class="btn btn--primary">Ver Mais Fotos</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer" id="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <div class="logo logo--light">
+          <img src="images/logo_abcj.jpg" alt="Logo ABCJ" class="logo__img" />
+        </div>
+        <p class="footer__tagline">Transformando vidas através da educação e da solidariedade em Jundiaí-SP.</p>
+        <div class="social-links footer__social">
+          <a href="https://www.facebook.com/AssociacaoBeneficenteECulturalDeJundiai/" class="social-link" aria-label="Facebook" target="_blank">f</a>
+          <a href="https://www.instagram.com/abcj_ong_" class="social-link" aria-label="Instagram" target="_blank">ig</a>
+        </div>
+      </div>
+
+      <div class="footer__col">
+        <h3 class="footer__heading">Links Rápidos</h3>
+        <ul class="footer__links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="a-abcj.html">A ABCJ</a></li>
+          <li><a href="equipe.html">Equipe</a></li>
+          <li><a href="index.html#projetos">Projetos</a></li>
+          <li><a href="index.html#contato">Contato</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h3 class="footer__heading">Projetos</h3>
+        <ul class="footer__links">
+          <li><a href="projeto-preparando-futuro.html">Preparando o Futuro</a></li>
+          <li><a href="projeto-campanha-inverno.html">Campanha Inverno</a></li>
+          <li><a href="projeto-cesta-basica.html">Cesta Básica</a></li>
+          <li><a href="projeto-natal-solidario.html">Natal Solidário</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h3 class="footer__heading">Contato</h3>
+        <ul class="footer__links footer__links--contact">
+          <li>📧 <a href="mailto:contato@abjc.com.br">contato@abjc.com.br</a></li>
+          <li>📧 <a href="mailto:abcjundiai@gmail.com">abcjundiai@gmail.com</a></li>
+          <li>📍 Rua Barão de Jundiaí, 161 Centro, Jundiaí – SP CEP 13201-010.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="container footer__bottom-inner">
+        <p>ABCJ – Associação Beneficente e Cultural de Jundiaí. Todos os direitos reservados.</p>
+        <p>Banco Sicredi – 748 | Agência: 0738 | Conta Corrente: 43182-5</p>
+        <p>CNPJ: 07.965.617/0001-90 | Chave PIX: 07965617/0001-90 | Entidade de Utilidade Pública</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
