@@ -446,6 +446,28 @@ ul   { list-style: none; }
 .contact__details a { color: rgba(255,255,255,.7); font-size: .9rem; transition: var(--transition); }
 .contact__details a:hover { color: var(--white); }
 
+/* Donation Video */
+.donation__video {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  align-self: center;
+  background: #000;
+}
+
+.donation__video iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 101%;
+  height: 101%;
+  transform: translate(-50%, -50%) scale(1.02); /* Escala leve para ocultar bordas pretas do player */
+  border: none;
+}
+
 /* Social links */
 .social-links { display: flex; gap: .5rem; margin-top: .5rem; }
 .social-link {
