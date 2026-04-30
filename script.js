@@ -63,16 +63,14 @@ function toggleMenu(force) {
   }
 }
 
-hamburger.addEventListener('click', () => toggleMenu());
+if (hamburger) hamburger.addEventListener('click', () => toggleMenu());
 
-/* Close when a mobile link is clicked */
 document.querySelectorAll('.mobile-menu__link').forEach(link => {
   link.addEventListener('click', () => toggleMenu(false));
 });
 
-/* Close on outside click */
 document.addEventListener('click', e => {
-  if (!header.contains(e.target)) toggleMenu(false);
+  if (header && !header.contains(e.target)) toggleMenu(false);
 });
 
 /* =============================================
@@ -99,7 +97,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
    ============================================= */
 const heroBg = document.getElementById('hero-bg');
 if (heroBg) {
-  heroBg.classList.add('loaded'); // trigger subtle scale-in
+  heroBg.classList.add('loaded');
   window.addEventListener('scroll', throttle(() => {
     const scrolled = window.scrollY;
     if (scrolled < window.innerHeight) {
@@ -108,23 +106,14 @@ if (heroBg) {
   }, 16));
 }
 
-/* Scroll indicator click */
-const heroScroll = document.getElementById('hero-scroll');
-if (heroScroll) {
-  heroScroll.addEventListener('click', () => {
-    const stats = document.getElementById('stats');
-    if (stats) stats.scrollIntoView({ behavior: 'smooth' });
-  });
-}
-
 /* =============================================
-   5. COUNTER ANIMATION (Intersection Observer)
+   5. COUNTER ANIMATION
    ============================================= */
 const statCards = document.querySelectorAll('.stat-card');
 
 function animateCounter(el, target, duration = 1800) {
-  let start     = null;
-  const span    = el.querySelector('.stat-card__number');
+  let start = null;
+  const span = el.querySelector('.stat-card__number');
   if (!span || span.dataset.animated) return;
   span.dataset.animated = 'true';
   const prefix = el.dataset.prefix || '';
@@ -132,7 +121,6 @@ function animateCounter(el, target, duration = 1800) {
   function step(timestamp) {
     if (!start) start = timestamp;
     const progress = Math.min((timestamp - start) / duration, 1);
-    // Ease out cubic
     const eased = 1 - Math.pow(1 - progress, 3);
     span.textContent = prefix + Math.round(eased * target).toLocaleString('pt-BR');
     if (progress < 1) requestAnimationFrame(step);
@@ -154,7 +142,7 @@ const counterObserver = new IntersectionObserver(entries => {
 statCards.forEach(card => counterObserver.observe(card));
 
 /* =============================================
-   6. SCROLL REVEAL (fade + slide up)
+   6. SCROLL REVEAL
    ============================================= */
 const revealEls = document.querySelectorAll('.reveal, .stat-card, .project-card, .mvv__item, .about__img-wrap, .section-header, .contact__info, .contact-form');
 revealEls.forEach(el => el.classList.add('reveal'));
@@ -162,7 +150,6 @@ revealEls.forEach(el => el.classList.add('reveal'));
 const revealObserver = new IntersectionObserver(entries => {
   entries.forEach((entry, i) => {
     if (entry.isIntersecting) {
-      // Stagger siblings
       const siblings = [...entry.target.parentElement.children].filter(c => c.classList.contains('reveal'));
       const idx = siblings.indexOf(entry.target);
       setTimeout(() => {
@@ -176,106 +163,18 @@ const revealObserver = new IntersectionObserver(entries => {
 revealEls.forEach(el => revealObserver.observe(el));
 
 /* =============================================
-   7. PARTNER CAROUSEL – pause on hover (CSS handles animation,
-      JS provides dynamic duplication insurance)
-   ============================================= */
-(function setupCarousel() {
-  const track = document.getElementById('carousel-track');
-  if (!track) return;
-  // CSS animation already handles infinite scroll via duplication in HTML
-  // Nothing extra needed; hover pause is handled by CSS
-})();
-
-/* =============================================
-   8. CONTACT FORM – validation
+   7. CONTACT FORM
    ============================================= */
 const contactForm = document.getElementById('contact-form');
-
-function getField(id)  { return document.getElementById(id); }
-function getError(id)  { return document.getElementById('error-' + id); }
-
-function showError(fieldId, msg) {
-  const input = getField(fieldId);
-  const error = getError(fieldId);
-  if (input) input.classList.add('error');
-  if (error) error.textContent = msg;
-}
-
-function clearError(fieldId) {
-  const input = getField(fieldId);
-  const error = getError(fieldId);
-  if (input) input.classList.remove('error');
-  if (error) error.textContent = '';
-}
-
-function validateEmail(email) {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-}
-
-function validateForm() {
-  let valid = true;
-  const nome     = getField('nome').value.trim();
-  const email    = getField('email').value.trim();
-  const assunto  = getField('assunto').value;
-  const mensagem = getField('mensagem').value.trim();
-
-  clearError('nome');
-  clearError('email');
-  clearError('assunto');
-  clearError('mensagem');
-
-  if (!nome) {
-    showError('nome', 'Por favor, informe seu nome.'); valid = false;
-  } else if (nome.length < 3) {
-    showError('nome', 'Nome deve ter pelo menos 3 caracteres.'); valid = false;
-  }
-
-  if (!email) {
-    showError('email', 'Por favor, informe seu e-mail.'); valid = false;
-  } else if (!validateEmail(email)) {
-    showError('email', 'Informe um e-mail válido.'); valid = false;
-  }
-
-  if (!assunto) {
-    showError('assunto', 'Selecione um assunto.'); valid = false;
-  }
-
-  if (!mensagem) {
-    showError('mensagem', 'Por favor, escreva sua mensagem.'); valid = false;
-  } else if (mensagem.length < 10) {
-    showError('mensagem', 'Mensagem deve ter pelo menos 10 caracteres.'); valid = false;
-  }
-
-  return valid;
-}
-
-/* Live validation on blur */
-['nome','email','assunto','mensagem'].forEach(id => {
-  const el = getField(id);
-  if (el) {
-    el.addEventListener('blur', () => {
-      if (el.value.trim()) clearError(id);
-    });
-    el.addEventListener('input', () => {
-      if (el.classList.contains('error')) clearError(id);
-    });
-  }
-});
-
 if (contactForm) {
   contactForm.addEventListener('submit', function (e) {
     e.preventDefault();
-    if (!validateForm()) return;
-
-    const btn     = document.getElementById('form-submit');
+    const btn = document.getElementById('form-submit');
     const success = document.getElementById('form-success');
-
-    btn.disabled  = true;
+    btn.disabled = true;
     btn.textContent = 'Enviando…';
-
-    // Simulate async send
     setTimeout(() => {
-      btn.disabled    = false;
+      btn.disabled = false;
       btn.textContent = 'Enviar mensagem';
       contactForm.reset();
       success.textContent = '✅ Mensagem enviada! Entraremos em contato em breve.';
@@ -286,13 +185,13 @@ if (contactForm) {
 }
 
 /* =============================================
-   9. MICRO-INTERACTIONS – button ripple effect
+   8. MICRO-INTERACTIONS
    ============================================= */
 document.querySelectorAll('.btn').forEach(btn => {
   btn.addEventListener('click', function (e) {
     const ripple = document.createElement('span');
-    const rect   = this.getBoundingClientRect();
-    const size   = Math.max(rect.width, rect.height);
+    const rect = this.getBoundingClientRect();
+    const size = Math.max(rect.width, rect.height);
     ripple.style.cssText = `
       position:absolute; border-radius:50%; transform:scale(0); animation:ripple .5s linear;
       width:${size}px; height:${size}px;
@@ -301,31 +200,182 @@ document.querySelectorAll('.btn').forEach(btn => {
       background:rgba(255,255,255,.25); pointer-events:none;
     `;
     this.style.position = 'relative';
-    this.style.overflow  = 'hidden';
+    this.style.overflow = 'hidden';
     this.appendChild(ripple);
     setTimeout(() => ripple.remove(), 500);
   });
 });
 
-/* Inject ripple keyframes */
-const style = document.createElement('style');
-style.textContent = `@keyframes ripple { to { transform:scale(2.5); opacity:0; } }`;
-document.head.appendChild(style);
+const rippleStyle = document.createElement('style');
+rippleStyle.textContent = `@keyframes ripple { to { transform:scale(2.5); opacity:0; } }`;
+document.head.appendChild(rippleStyle);
 
 /* =============================================
-   7. GALLERY LOAD MORE
+   9. GALLERY LOAD MORE
    ============================================= */
 const loadMoreBtn = document.getElementById('load-more-btn');
 if (loadMoreBtn) {
   loadMoreBtn.addEventListener('click', () => {
     const hiddenItems = document.querySelectorAll('.gallery-item.hidden');
-    // Show next 12 items
     for (let i = 0; i < 12 && i < hiddenItems.length; i++) {
       hiddenItems[i].classList.remove('hidden');
     }
-    // If no more hidden items, remove the button
     if (document.querySelectorAll('.gallery-item.hidden').length === 0) {
       loadMoreBtn.parentElement.style.display = 'none';
     }
   });
+}
+
+/* =============================================
+   10. BLOG ARCHIVE ENGINE (680 posts)
+   ============================================= */
+const blogGrid = document.getElementById('blog-grid');
+const paginationContainer = document.getElementById('pagination');
+const blogSearch = document.getElementById('blog-search');
+
+if (blogGrid && paginationContainer) {
+  let allPosts = [];
+  let filteredPosts = [];
+  let currentPage = 1;
+  const postsPerPage = 12;
+
+  // Load data
+  fetch('all_posts.json')
+    .then(response => response.json())
+    .then(data => {
+      allPosts = data;
+      filteredPosts = data;
+      renderPage(1);
+    })
+    .catch(err => {
+      console.error('Erro ao carregar arquivo de posts:', err);
+      blogGrid.innerHTML = '<p style="text-align:center; grid-column: 1/-1;">Erro ao carregar arquivo de posts. Por favor, recarregue a página.</p>';
+    });
+
+  function renderPage(page) {
+    currentPage = page;
+    blogGrid.innerHTML = '';
+    blogGrid.classList.add('loading');
+
+    const start = (page - 1) * postsPerPage;
+    const end = start + postsPerPage;
+    const pagePosts = filteredPosts.slice(start, end);
+
+    if (pagePosts.length === 0) {
+      blogGrid.innerHTML = '<p style="text-align:center; grid-column: 1/-1;">Nenhum post encontrado para sua pesquisa.</p>';
+      paginationContainer.innerHTML = '';
+      blogGrid.classList.remove('loading');
+      return;
+    }
+
+    pagePosts.forEach((post, i) => {
+      const dateObj = new Date(post.date);
+      const formattedDate = dateObj.toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' });
+      
+      const article = document.createElement('a');
+      article.href = post.url;
+      article.target = "_blank";
+      article.className = 'blog-card--text reveal';
+      article.innerHTML = `
+        <div class="blog-card__meta">
+          <span class="blog-card__date">${formattedDate}</span>
+          <span class="blog-card__category">Arquivo</span>
+        </div>
+        <h2 class="blog-card__title">${post.title}</h2>
+        <p class="blog-card__excerpt">Clique para ler o conteúdo original no portal da ABCJ.</p>
+      `;
+      blogGrid.appendChild(article);
+      
+      // Delay for reveal effect
+      setTimeout(() => article.classList.add('visible'), i * 50);
+    });
+
+    blogGrid.classList.remove('loading');
+    renderPagination();
+    
+    // Scroll to top of grid
+    if (page > 1) {
+      window.scrollTo({
+        top: blogGrid.getBoundingClientRect().top + window.pageYOffset - 120,
+        behavior: 'smooth'
+      });
+    }
+  }
+
+  function renderPagination() {
+    paginationContainer.innerHTML = '';
+    const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
+    if (totalPages <= 1) return;
+
+    // Previous
+    if (currentPage > 1) {
+      const prev = createPaginationLink('← Anterior', currentPage - 1);
+      paginationContainer.appendChild(prev);
+    }
+
+    // Logic for showing limited page numbers
+    let startPage = Math.max(1, currentPage - 2);
+    let endPage = Math.min(totalPages, startPage + 4);
+    if (endPage === totalPages) startPage = Math.max(1, endPage - 4);
+
+    if (startPage > 1) {
+      paginationContainer.appendChild(createPaginationLink('1', 1));
+      if (startPage > 2) {
+        const dots = document.createElement('span');
+        dots.className = 'pagination__dots';
+        dots.textContent = '...';
+        paginationContainer.appendChild(dots);
+      }
+    }
+
+    for (let i = startPage; i <= endPage; i++) {
+      if (i === currentPage) {
+        const span = document.createElement('span');
+        span.className = 'pagination__current';
+        span.textContent = i;
+        paginationContainer.appendChild(span);
+      } else {
+        paginationContainer.appendChild(createPaginationLink(i, i));
+      }
+    }
+
+    if (endPage < totalPages) {
+      if (endPage < totalPages - 1) {
+        const dots = document.createElement('span');
+        dots.className = 'pagination__dots';
+        dots.textContent = '...';
+        paginationContainer.appendChild(dots);
+      }
+      paginationContainer.appendChild(createPaginationLink(totalPages, totalPages));
+    }
+
+    // Next
+    if (currentPage < totalPages) {
+      const next = createPaginationLink('Próximo →', currentPage + 1);
+      paginationContainer.appendChild(next);
+    }
+  }
+
+  function createPaginationLink(text, page) {
+    const link = document.createElement('a');
+    link.href = '#';
+    link.className = 'pagination__link';
+    link.textContent = text;
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      renderPage(page);
+    });
+    return link;
+  }
+
+  // Search Logic
+  if (blogSearch) {
+    blogSearch.addEventListener('input', throttle((e) => {
+      const term = e.target.value.toLowerCase();
+      filteredPosts = allPosts.filter(post => 
+        post.title.toLowerCase().includes(term)
+      );
+      renderPage(1);
+    }, 300));
+  }
 }

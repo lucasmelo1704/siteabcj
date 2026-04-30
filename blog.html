@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Blog da ABCJ – Acompanhe o arquivo completo de notícias e transformações da nossa comunidade." />
+  <title>Blog – ABCJ (Arquivo Completo)</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="icon" href="images/logo_abcj.jpg" type="image/jpeg" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+  <style>
+    /* Premium Text-Only Blog Styles */
+    .blog-section { padding: 4rem 0 8rem; background: var(--white); }
+    .blog-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+    
+    .blog-card--text {
+      display: flex;
+      flex-direction: column;
+      padding: 2.5rem;
+      border-radius: var(--radius-lg);
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      text-decoration: none;
+      color: inherit;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .blog-card--text:hover {
+      transform: translateY(-5px);
+      border-color: var(--orange-500);
+      background: var(--white);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    }
+    
+    .blog-card--text::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 4px;
+      background: var(--orange-500);
+      transform: scaleY(0);
+      transition: transform 0.4s ease;
+    }
+    
+    .blog-card--text:hover::before { transform: scaleY(1); }
+    
+    .blog-card__meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.85rem;
+      color: var(--gray-500);
+      margin-bottom: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    .blog-card__date { font-weight: 600; color: var(--orange-600); }
+    
+    .blog-card__title {
+      font-size: 1.5rem;
+      line-height: 1.3;
+      margin-bottom: 0.5rem;
+      font-family: var(--font-display);
+      color: var(--gray-900);
+      transition: color 0.3s ease;
+    }
+    
+    .blog-card--text:hover .blog-card__title { color: var(--orange-600); }
+    
+    .blog-card__excerpt {
+      font-size: 1rem;
+      color: var(--gray-600);
+      line-height: 1.6;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    /* Loading state */
+    #blog-grid.loading { opacity: 0.5; pointer-events: none; }
+    
+    .search-bar {
+      max-width: 600px;
+      margin: -2rem auto 4rem;
+      position: relative;
+      z-index: 10;
+    }
+    
+    .search-input {
+      width: 100%;
+      padding: 1.2rem 1.5rem;
+      border-radius: 100px;
+      border: 2px solid var(--gray-200);
+      font-size: 1.1rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+    }
+    
+    .search-input:focus {
+      outline: none;
+      border-color: var(--orange-500);
+      box-shadow: 0 15px 40px rgba(255, 75, 1, 0.15);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header class="header scrolled" id="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo" id="logo-link">
+        <img src="images/logo_abcj.jpg" alt="Logo ABCJ" class="logo__img" />
+      </a>
+
+      <nav class="nav" id="main-nav" aria-label="Menu principal">
+        <ul class="nav__list">
+          <li><a href="a-abcj.html" class="nav__link">A ABCJ</a></li>
+          <li><a href="equipe.html" class="nav__link">Equipe</a></li>
+          <li class="nav__dropdown">
+            <a href="index.html#projetos" class="nav__link">Projetos <span class="nav__arrow">▾</span></a>
+            <ul class="nav__sub">
+              <li><a href="projeto-preparando-futuro.html">Preparando o Futuro</a></li>
+              <li><a href="projeto-campanha-inverno.html">Campanha Inverno</a></li>
+              <li><a href="projeto-cesta-basica.html">Cesta Básica</a></li>
+              <li><a href="projeto-natal-solidario.html">Natal Solidário</a></li>
+            </ul>
+          </li>
+          <li><a href="formandos.html" class="nav__link">Formandos / Graduados</a></li>
+          <li><a href="blog.html" class="nav__link active">Blog</a></li>
+          <li><a href="index.html#contato" class="nav__link">Contato</a></li>
+        </ul>
+      </nav>
+
+      <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ========== HERO BLOG ========== -->
+    <section class="hero hero--project hero--blog" id="home">
+      <div class="hero__bg" style="background-image: url('images/main.jpg'); background-position: center 30%;"></div>
+      <div class="hero__overlay"></div>
+      <div class="hero__content">
+        <span class="hero__tag animate-fade-up">Arquivo Completo</span>
+        <h1 class="hero__title animate-fade-up delay-1">Nosso <em>Blog</em></h1>
+        <p class="hero__subtitle animate-fade-up delay-2">
+          Explore absolutamente todos os registros e notícias da ABCJ desde o início.
+        </p>
+      </div>
+    </section>
+
+    <!-- ========== BLOG ENTRIES ========== -->
+    <section class="blog-section">
+      <div class="container">
+        
+        <div class="search-bar reveal">
+          <input type="text" id="blog-search" class="search-input" placeholder="Pesquisar no arquivo de 680 posts..." />
+        </div>
+
+        <div class="blog-grid" id="blog-grid">
+          <!-- Populated by JS -->
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination reveal" id="pagination">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer" id="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <div class="logo logo--light">
+          <img src="images/logo_abcj.jpg" alt="Logo ABCJ" class="logo__img" />
+        </div>
+        <p class="footer__tagline">Transformando vidas através da educação e da solidariedade em Jundiaí-SP.</p>
+        <div class="social-links footer__social">
+          <a href="https://www.facebook.com/AssociacaoBeneficenteECulturalDeJundiai/" class="social-link" aria-label="Facebook" target="_blank">f</a>
+          <a href="https://www.instagram.com/abcj_ong_" class="social-link" aria-label="Instagram" target="_blank">ig</a>
+        </div>
+      </div>
+
+      <div class="footer__col">
+        <h3 class="footer__heading">Links Rápidos</h3>
+        <ul class="footer__links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="a-abcj.html">Sobre a ABCJ</a></li>
+          <li><a href="index.html#projetos">Projetos</a></li>
+          <li><a href="index.html#parceiros">Parceiros</a></li>
+          <li><a href="index.html#contato">Contato</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h3 class="footer__heading">Projetos</h3>
+        <ul class="footer__links">
+          <li><a href="projeto-preparando-futuro.html">Preparando o Futuro</a></li>
+          <li><a href="projeto-campanha-inverno.html">Campanha Inverno</a></li>
+          <li><a href="projeto-cesta-basica.html">Cesta Básica</a></li>
+          <li><a href="projeto-natal-solidario.html">Natal Solidário</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h3 class="footer__heading">Contato</h3>
+        <ul class="footer__links footer__links--contact">
+          <li>📧 <a href="mailto:contato@abjc.com.br">contato@abjc.com.br</a></li>
+          <li>📧 <a href="mailto:abcjundiai@gmail.com">abcjundiai@gmail.com</a></li>
+          <li>📍 Rua Barão de Jundiaí, 161 Centro, Jundiaí – SP CEP 13201-010.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="container footer__bottom-inner">
+        <p>ABCJ – Associação Beneficente e Cultural de Jundiaí. Todos os direitos reservados.</p>
+        <p>Banco Sicredi – 748 | Agência: 0738 | Conta Corrente: 43182-5</p>
+        <p>CNPJ: 07.965.617/0001-90 | Chave PIX: 07965617/0001-90 | Entidade de Utilidade Pública</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
